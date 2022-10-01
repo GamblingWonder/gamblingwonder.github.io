@@ -9,7 +9,7 @@
 		<meta property="og:title" content="DICEBot - betting bot">
 		<meta property="og:description" content="Flexible and feature rich betting bot for a variety of crypto-currency dice sites">
 		<meta property="og:url" content="https://gamblingwonder.github.io">
-		<meta property="og:image" content="https://gamblingwonder.github.io/images/DICEBOT.png">
+		<meta property="og:image" content="https://gamblingwonder.github.io/images/dicebot-logo.png">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -63,8 +63,8 @@
 			  	background-image: linear-gradient(0deg, #F4F4F4, #F4F4F4);
 				padding-top: 30px;
 			}
-            div.bluue {
-			  	background-image: linear-gradient(0deg, #F4F4F4, #239DE2);
+            div.blue {
+			  	background-image: linear-gradient(0deg, #F4F4F4, #012439);
 				padding-top: 30px;
 			}
 			div.background {
@@ -210,7 +210,7 @@
 				opacity: 1;
 			}
 			.nav-link.outline {
-				color: #239DE2;
+				color: #012439;
 				padding: .2rem 0.5rem;
 				margin-left: 0.5rem;
 				font-size: 14px;
@@ -218,18 +218,18 @@
 				border: 1px solid transparent;
 			}
 			.nav-link.outline.selected {
-				border: 1px solid #239DE2;
+				border: 1px solid #012439;
 				border-radius: 4px;
 			}
 			.nav-link.outline:hover, .nav-link.outline:focus, .nav-link.outline:active, .nav-link.outline.active {
-				color: #239DE2;
-				border: 1px solid #239DE2;
+				color: #012439;
+				border: 1px solid #012439;
 				border-radius: 4px;
 			}
 			.nav-link.outline:active, .nav-link.outline.active {
 				color: white;
-				border-color: #239DE2;
-				background: #239DE2;
+				border-color: #012439;
+				background: #012439;
 			}
 
 			.footer.blue {
@@ -250,13 +250,23 @@
 			}
             .btn {
 				color: white;
-				border: 1px solid rgba(0, 0, 0, 1);
+				/*border: 1px solid rgba(0, 0, 0, 1);*/
+                border:0;
 				font-weight: 300;
 				font-size: 18px;
 				padding: 10px 22px 8px 22px;
                 background: rgba(0, 0, 0, 1);
 			}
-
+            .btn.grey{
+				background: rgba(128, 135, 144, 1.00);
+			}
+			.btn.blue{
+				background: rgba(27, 163, 239, 1);
+			}
+			.btn.grey:hover, .btn.grey:focus, .btn.grey.focus {
+				color: white;
+                
+			}
             .orange{
                 background-color: #faf111;
             }
@@ -341,7 +351,7 @@
 
 			<div class="row" style="padding-top:10px; margin-bottom:-30px;">
 				<div class="col-md-12 text-center">
-					<img src="images/dicebot.png" style="width:325px; height:290px; margin-bottom: -36px;" class="img-fluid">
+					<img src="images/dicebot-logo.png" style="width:325px; height:290px; margin-bottom: -36px;" class="img-fluid">
 				</div>
 			</div>
 
@@ -362,7 +372,7 @@
 			<div class="row">
 				<div class="col-md-2 col-sm-2"></div>
 				<div class="col-md-8 col-sm-8 col-xs-12">
-					<h4 class="header4 text-center">Day after day, Dicebot is getting better and better. Download it now! </h4>
+					<h4 class="header4 text-center">Day after day, Dicebot is getting better and better.  </h4>
 				</div>
 				
 				<div class="col-md-2 col-sm-2" ></div>
@@ -372,10 +382,10 @@
 				<div class="col-md-5 col-sm-0 col-xs-0"></div>
 				<div class="text-center col-md-2 col-sm-12 col-xs-12">
 					<span class="text-center">
-						<a class="btn text-nowrap" href="https://github.com/GamblingWonder/Dicebot/releases" target="_blank">
-							<p class="lead white text-center" style="font-weight:300; margin-bottom:2px;">Download last release</p>
+						<a  id="latest_release_link" class="btn text-nowrap" href="https://github.com/GamblingWonder/Dicebot/releases" target="_blank">
+							<p class="lead white text-center" style="font-weight:300; margin-bottom:2px;">Download it now!</p>
 						</a>
-						 <p class="small text-center" style="color:#7F7F7F; margin-top:4px; margin-bottom:30px;"></p>
+						 <p id="latest_release_version" class="small text-center current-version-text" style="color:#7F7F7F; margin-top:4px; margin-bottom:30px;">{version}</p>
 					</span>
 				</div>			
 				<div class="col-md-4 col-sm-0 col-xs-0"></div>
@@ -446,17 +456,33 @@
 					</div>
 				</div> -->
 
-                <div class="row">
-                    <div class="col-md-5 col-sm-0 col-xs-0"></div>
-                    <div class="text-center col-md-2 col-sm-12 col-xs-12 float-right text-center">
+                <div class="row" style="padding-top: 50px;">
+                    <div class="col-md-2 col-sm-0 col-xs-0"></div>
+                    <div class="text-center col-md-3 col-sm-12 col-xs-12 float-right text-center">
                         <span class="text-center">
-                            <a class="btn text-nowrap" href="https://github.com/GamblingWonder/Dicebot/releases">
-                                <p class="lead white text-center" style="font-weight:300; margin-bottom:2px;">Download last release</p>
+                            <a id="latest_release_link" class="btn blue text-nowrap " target="_blank" href="https://github.com/GamblingWonder/Dicebot/releases">
+                                <p class="lead white text-center download-link-text" style="font-weight:300; margin-bottom:2px;">Download latest version</p>
+                            </a>
+                             <p id="latest_release_version" class="small text-center" style="color:#7F7F7F; margin-top:4px; margin-bottom:30px;">{version}</p>
+                        </span>
+                    </div>	
+                    <div class="text-center col-md-3 col-sm-12 col-xs-12 float-right text-center">
+                        <span class="text-center">
+                            <a class="btn grey text-nowrap" target="_blank" href="https://github.com/GamblingWonder/Dicebot/releases">
+                                <p class="lead white text-center" style="font-weight:300; margin-bottom:2px;">Check latest releases</p>
+                            </a>
+                             <p class="small text-center" style="color:#7F7F7F; margin-top:4px; margin-bottom:30px;"></p>
+                        </span>
+                    </div>		
+                    <div class="text-center col-md-3 col-sm-12 col-xs-12 float-right text-center">
+                        <span class="text-center">
+                            <a class="btn grey text-nowrap" target="_blank" href="https://github.com/GamblingWonder/Dicebot">
+                                <p class="lead white text-center" style="font-weight:300; margin-bottom:2px;">Get the source code</p>
                             </a>
                              <p class="small text-center" style="color:#7F7F7F; margin-top:4px; margin-bottom:30px;"></p>
                         </span>
                     </div>			
-                    <div class="col-md-4 col-sm-0 col-xs-0"></div>
+                    <div class="col-md-2 col-sm-0 col-xs-0"></div>
                 </div>
 			</div>
 
@@ -488,36 +514,39 @@
 			</div>
 
 		</div> 
+        <!--
 
-		<!-- <div class="container-lg feature">
-
-			<div class="row">
-				<div class="col-md-1" ></div>
-				<div class="col-md-10 feature text-center">
-					<h3 class="header3 feature">Scripting bet system based on LUA</h3>
-					<p class="lead feature">Create your lua script an let it run.</p>
-					<img id="interactiveRebase" class="img-fluid feature-shadow" alt="Interactive Rebase">
-				</div>
-				<div class="col-md-10"></div>
-			</div>
-		</div> -->
-
-		<!-- <div id="imageDiffContainer" class="container-lg feature">
+        <div class="container-fluid grey" style="margin-bottom:30px;">
 
 			<div class="row">
-				<div class="col-md-1" ></div>
-				<div class="col-md-10 feature text-center">
-					<h3 class="header3 feature">Multiple crypto casinos.</h3>
-					<p class="lead feature">Choose your favorite casino and start winning.</p>
-					<img src="images/imageDiff.jpg" class="img-fluid feature-shadow rounded-corners" alt="Image Diffs">
-					
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<h3 class="text-center header3 feature">About DICEBot</h3>
 				</div>
-				<div class="col-md-1" ></div>
+				<div class="col-md-4"></div>
 			</div>
 
-		</div> -->
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<p class="text-center lead">With love to make money!</p>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
 
-		
+			<div class="row">
+				<div class="col-md-2 col-sm-0"></div>
+				<div class="col-md-8 col-sm-6">
+					<div class="row">
+						<div class="container text-center">
+							Dicebot was created by
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2 col-sm-0"></div>
+			</div>
+		</div>
+    -->
 	
 		<footer class="container-fluid footer blue">
 			<div class="row">
@@ -532,7 +561,7 @@
 				<div class="col-md-6 col-xs-6">
 					<div class="text-center">
 						<p class="footer white">
-							<a class="footer" href="/home">Home</a>
+							<a class="footer" href="/">Home</a>
 						</p>
 					</div>
 				</div>
@@ -553,5 +582,32 @@
 		 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-	</body>
+	
+         <script>
+
+
+
+
+
+function UpdateReleaseInfo() {
+   $.getJSON("https://api.github.com/repos/gamblingwonder/dicebot/releases").done(function (json) {
+        var release = json[0];
+        var latest_package_version =json[0].tag_name;
+        var latest_package_url = json[0].assets[0].browser_download_url;
+        $("#latest_release_link").attr("href", latest_package_url);  
+
+
+        $("#latest_release_version").text(latest_package_version);
+
+   });    
+}  
+
+
+$(document).ready(function () {
+     UpdateReleaseInfo();  
+});  
+
+         </script>
+    
+        </body>
 </html>
